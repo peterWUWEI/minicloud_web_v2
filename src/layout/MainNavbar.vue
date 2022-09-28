@@ -111,7 +111,6 @@ export default {
         this.$router.replace(this.switchLocalePath(event));
     },
     changeLocale(language) {
-      console.log("language", language);
       this.$i18n.locale = language;
     },
     info_title() {
