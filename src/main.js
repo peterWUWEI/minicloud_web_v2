@@ -5,11 +5,26 @@ import router from './router';
 import NowUiKit from './plugins/now-ui-kit';
 import i18n from './i18n'
 import VueI18n from 'vue-i18n';
+import axios from 'axios';
 
 Vue.config.productionTip = false;
 
 Vue.use(NowUiKit);
 Vue.use(VueI18n);
+
+axios.interceptors.request.use(
+  (config) => {
+    config.headers['Authorization'] = `Bearer ${process.env.VUE_APP_API_KEY}`;
+    config.headers['Access-Control-Allow-Origin'] = '*';
+    config.baseURL = process.env.VUE_APP_API_URL
+
+    return config;
+  },
+
+  (error) => {
+      return Promise.reject(error);
+  }
+);
 
 new Vue({
   router,

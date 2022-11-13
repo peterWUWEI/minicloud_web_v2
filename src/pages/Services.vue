@@ -12,16 +12,13 @@
         </div>
       </div>
     </div>
-    <div class="section section-about-us">
+    <div class="section section-about-us" v-for="service in services" :key="service.id">
       <div class="container">
         <div class="row">
           <div class="col-md-8 ml-auto mr-auto text-center">
-            <h2 class="title">Who we are?</h2>
+            <h2 class="title"> {{ service.service_title }}</h2>
             <h5 class="description">
-              According to the National Oceanic and Atmospheric Administration,
-              Ted, Scambos, NSIDClead scentist, puts the potentially record low
-              maximum sea ice extent tihs year down to low ice extent in the
-              Pacific and a late drop in ice extent in the Barents Sea.
+              {{ service.service_content }}
             </h5>
           </div>
         </div>
@@ -35,14 +32,31 @@
   </div>
 </template>
 <script>
-import { Button, FormGroupInput } from '@/components';
-export default {
-  name: 'services',
-  bodyClass: 'landing-page',
-  components: {
-    [Button.name]: Button,
-    [FormGroupInput.name]: FormGroupInput
-  }
-};
+  import { Button, FormGroupInput } from '@/components';
+  import axios from 'axios';
+
+  export default {
+    name: 'services',
+    bodyClass: 'landing-page',
+    components: {
+      [Button.name]: Button,
+      [FormGroupInput.name]: FormGroupInput
+    },
+    data() {
+      return {
+        services: []
+      }
+    },
+    methods: {
+      async fetchServices() {
+        const res = await axios.get('/services');
+        console.log('services data', res.data);
+        this.services = res.data;
+      }
+    },
+    async created() {
+      await this.fetchServices();
+    }
+  };
 </script>
 <style></style>

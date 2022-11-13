@@ -38,6 +38,9 @@
         <nav-link to="/about">
           <i class="now-ui-icons business_badge"></i> {{ $t("about") }}
         </nav-link>
+        <nav-link to="/hiring">
+          <i class="now-ui-icons ui-1_zoom-bold"></i> {{ $t("hiring") }}
+        </nav-link>
         <nav-link to="/investor_info">
           <i class="now-ui-icons education_paper"></i> {{ $t("investors") }}
         </nav-link>
@@ -59,7 +62,7 @@
         <!-- <LocaleSwitcher /> -->
       </li>
       <drop-down
-        title="language"
+        :title="language_title()"
         icon="now-ui-icons business_globe"
         class="nav-item"
       >
@@ -118,6 +121,9 @@ export default {
     },
     others_title() {
       return this.$i18n.messages[this.$i18n.locale].others
+    },
+    language_title() {
+      return this.$i18n.messages[this.$i18n.locale].language
     }
   }
 };

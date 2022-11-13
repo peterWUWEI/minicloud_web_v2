@@ -3,7 +3,8 @@
     "news": "News・Notifications",
     "info": "Info",
     "others": "Others",
-    "about": "Enterprise・Recruitment",
+    "about": "Enterprise",
+    "hiring": "Recruitment",
     "investors": "IR Public Notice",
     "sustainability": "Sustainability",
     "contact": "Visit・Contact",
@@ -17,5 +18,6 @@
     "contact_header": "Contact Us",
     "slogan": "One of the most fast growing E-Commerce in Japan",
     "mission_title": "Our Mission",
-    "mission_desc": "The kit comes with three pre-built pages to help you get started faster. You can change the text and images and you're good to go. More importantly, looking at them will give you a picture of what you can built with this powerful Bootstrap 4 ui kit."
+    "mission_desc": "The kit comes with three pre-built pages to help you get started faster. You can change the text and images and you're good to go. More importantly, looking at them will give you a picture of what you can built with this powerful Bootstrap 4 ui kit.",
+    "language": "language"
 }

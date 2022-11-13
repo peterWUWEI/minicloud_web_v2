@@ -18,9 +18,8 @@
       <div class="container text-center">
         <div class="row justify-content-md-center">
           <div class="col-md-12 col-lg-8">
-            <h2 class="title">{{ $t("mission_title") }}</h2>
+            <h2 class="title"></h2>
             <h5 class="description">
-              {{ $t("mission_desc") }}
             </h5>
           </div>
         </div>

@@ -3,7 +3,8 @@
     "news": "新闻・通知",
     "info": "信息",
     "others": "其它",
-    "about": "企业・招聘",
+    "about": "企业",
+    "hiring": "招聘",
     "investors": "IR 公告",
     "sustainability": "可持续发展",
     "contact": "访问・联系",
@@ -15,5 +16,6 @@
     "investor_info_header": "投资相关信息",
     "sustainability_header": "可持续发展",
     "contact_header": "联系我们",
-    "slogan": "日本发展最快的电商平台之一"
+    "slogan": "日本发展最快的电商平台之一",
+    "language": "语言"
 }

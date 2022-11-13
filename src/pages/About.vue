@@ -12,17 +12,16 @@
         </div>
       </div>
     </div>
-    <div class="section section-about-us">
+    <div class="section section-about-us" v-for="element in about" :key="element.id">
       <div class="container">
         <div class="row">
           <div class="col-md-8 ml-auto mr-auto text-center">
-            <h2 class="title">Who we are?</h2>
+            <h2 class="title">{{ element.title }}</h2>
+            <img v-bind:src="element.image_url" class="img-raised">
             <h5 class="description">
-              According to the National Oceanic and Atmospheric Administration,
-              Ted, Scambos, NSIDClead scentist, puts the potentially record low
-              maximum sea ice extent tihs year down to low ice extent in the
-              Pacific and a late drop in ice extent in the Barents Sea.
+              {{ element.content }}
             </h5>
+
           </div>
         </div>
         <div class="separator separator-primary"></div>
@@ -32,13 +31,90 @@
         </div>
       </div>
     </div>
+    <div class="section section-team text-center">
+      <div class="container">
+        <h2 class="title">我们的团队</h2>
+        <div class="team">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="team-player">
+                <img
+                  src="img/default_profile.jpg"
+                  alt="Thumbnail Image"
+                  class="rounded-circle img-fluid img-raised"
+                />
+                <h4 class="title">Jay Meng</h4>
+                <p class="category text-primary">CEO</p>
+                <p class="description">
+                  You can write here details about one of your team members. You
+                  can give more details about what they do. Feel free to add
+                  some <a href="#">links</a> for people to be able to follow
+                  them outside the site.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="team-player">
+                <img
+                  src="img/default_profile.jpg"
+                  alt="Thumbnail Image"
+                  class="rounded-circle img-fluid img-raised"
+                />
+                <h4 class="title">Unknown</h4>
+                <p class="category text-primary">CFO</p>
+                <p class="description">
+                  You can write here details about one of your team members. You
+                  can give more details about what they do. Feel free to add
+                  some <a href="#">links</a> for people to be able to follow
+                  them outside the site.
+                </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="team-player">
+                <img
+                  src="img/default_profile.jpg"
+                  alt="Thumbnail Image"
+                  class="rounded-circle img-fluid img-raised"
+                />
+                <h4 class="title">Wu Wei</h4>
+                <p class="category text-primary">Tech Lead</p>
+                <p class="description">
+                  You can write here details about one of your team members. You
+                  can give more details about what they do. Feel free to add
+                  some <a href="#">links</a> for people to be able to follow
+                  them outside the site.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
+
 <script>
-import { Button, FormGroupInput } from '@/components';
-export default {
-  name: 'about',
-  bodyClass: 'landing-page',
-};
+  import axios from 'axios';
+
+  export default {
+    name: 'about',
+    bodyClass: 'landing-page',
+    data() {
+      return {
+        about: []
+      }
+    },
+    methods: {
+      async fetchAbout() {
+        const res = await axios.get('/about');
+        console.log('about data', res.data);
+        this.about = res.data;
+      }
+    },
+    async created() {
+      await this.fetchAbout();
+    }
+  };
 </script>
 <style></style>
