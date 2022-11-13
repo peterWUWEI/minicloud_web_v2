@@ -50,7 +50,6 @@
     methods: {
       async fetchServices() {
         const res = await axios.get('/services');
-        console.log('services data', res.data);
         this.services = res.data;
       }
     },

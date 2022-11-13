@@ -108,7 +108,6 @@
     methods: {
       async fetchAbout() {
         const res = await axios.get('/about');
-        console.log('about data', res.data);
         this.about = res.data;
       }
     },
