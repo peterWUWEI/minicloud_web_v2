@@ -48,7 +48,7 @@
                 <p class="description">
                   You can write here details about one of your team members. You
                   can give more details about what they do. Feel free to add
-                  some <a href="#">links</a> for people to be able to follow
+                  some for people to be able to follow
                   them outside the site.
                 </p>
               </div>

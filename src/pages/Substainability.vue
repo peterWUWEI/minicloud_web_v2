@@ -16,13 +16,11 @@
       <div class="container">
         <div class="row">
           <div class="col-md-8 ml-auto mr-auto text-center">
-            <h2 class="title">Who we are?</h2>
+            <h2 class="title">{{ sustainability.title }}</h2>
             <h5 class="description">
-              According to the National Oceanic and Atmospheric Administration,
-              Ted, Scambos, NSIDClead scentist, puts the potentially record low
-              maximum sea ice extent tihs year down to low ice extent in the
-              Pacific and a late drop in ice extent in the Barents Sea.
+              {{ sustainability.content }}
             </h5>
+            <img v-bind:src="sustainability.image_url" class="img-raised">
           </div>
         </div>
         <div class="separator separator-primary"></div>
@@ -42,6 +40,20 @@ export default {
   components: {
     [Button.name]: Button,
     [FormGroupInput.name]: FormGroupInput
+  },
+  data() {
+    return {
+      sustainability: {}
+    }
+  },
+  methods: {
+    async fetchSustainability() {
+      const res = await axios.get('/sustainability');
+      this.sustainability = res.data;
+    }
+  },
+  async created() {
+    await this.fetchSustainability();
   }
 };
 </script>

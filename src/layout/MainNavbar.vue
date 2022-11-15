@@ -38,7 +38,7 @@
         <nav-link to="/about">
           <i class="now-ui-icons business_badge"></i> {{ $t("about") }}
         </nav-link>
-        <nav-link to="/hiring">
+        <nav-link to="#">
           <i class="now-ui-icons ui-1_zoom-bold"></i> {{ $t("hiring") }}
         </nav-link>
         <nav-link to="/investor_info">

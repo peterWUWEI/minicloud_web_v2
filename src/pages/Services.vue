@@ -20,6 +20,7 @@
             <h5 class="description">
               {{ service.service_content }}
             </h5>
+            <img v-bind:src="service.image_url" class="img-raised">
           </div>
         </div>
         <div class="separator separator-primary"></div>
