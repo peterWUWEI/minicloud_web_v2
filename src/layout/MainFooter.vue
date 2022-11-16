@@ -8,9 +8,14 @@
       <nav>
         <ul>
           <li>
-            <a href="">
-              Minicloud
-            </a>
+            <router-link to="/sitepolicy">
+              {{ $t("sitepolicy") }}
+            </router-link>
+          </li>
+          <li>
+            <router-link to="/sitemap">
+              {{ $t("sitemap") }}
+            </router-link>
           </li>
           <li>
             <router-link to="/contact">

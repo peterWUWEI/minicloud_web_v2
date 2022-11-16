@@ -3,12 +3,12 @@
     <div class="page-header page-header-small">
       <parallax
         class="page-header-image"
-        style="background-image: url('img/bg-about.jpg')"
+        style="background-image: url('img/bg-about.jpeg')"
       >
       </parallax>
       <div class="content-center">
         <div class="container">
-          <h1 class="title">{{ $t("about_header") }}</h1>
+          <h1 class="title">{{ $t("about") }}</h1>
         </div>
       </div>
     </div>

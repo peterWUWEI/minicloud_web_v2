@@ -8,6 +8,7 @@
   >
     <template>
       <router-link v-popover:popover1 class="navbar-brand" to="/">
+        <img class="n-logo" width="80" src="img/now-logo.png" alt="" />
         Minicloud
       </router-link>
       <el-popover
@@ -25,26 +26,33 @@
     <template slot="navbar-menu">
       <li class="nav-item">
         <router-link class="nav-link" to="/services">
-          <i class="now-ui-icons ui-2_settings-90"></i>
-          <p>{{ $t("services") }}</p>
+          <h5><i class="now-ui-icons ui-2_settings-90"></i> {{ $t("services") }}</h5>
         </router-link>
       </li>
-      <drop-down
+
+      <li class="nav-item">
+        <router-link class="nav-link" to="/about">
+          <h5><i class="now-ui-icons business_badge"></i> {{ $t("about") }}</h5>
+        </router-link>
+      </li>
+      
+      <!-- <drop-down
         tag="li"
         :title="info_title()"
         icon="now-ui-icons design_app"
         class="nav-item"
       >
         <nav-link to="/about">
-          <i class="now-ui-icons business_badge"></i> {{ $t("about") }}
+          <h5> <i class="now-ui-icons business_badge"></i> {{ $t("about") }} </h5>
         </nav-link>
         <nav-link to="#">
-          <i class="now-ui-icons ui-1_zoom-bold"></i> {{ $t("hiring") }}
+          <h5> <i class="now-ui-icons ui-1_zoom-bold"></i> {{ $t("hiring") }} </h5>
         </nav-link>
         <nav-link to="/investor_info">
-          <i class="now-ui-icons education_paper"></i> {{ $t("investors") }}
+          <h5> <i class="now-ui-icons education_paper"></i> {{ $t("investors") }} </h5>
         </nav-link>
-      </drop-down>
+      </drop-down> -->
+
       <drop-down
         tag="li"
         :title="others_title()"
@@ -52,10 +60,19 @@
         class="nav-item"
       >
         <nav-link to="/news">
-          <i class="now-ui-icons files_single-copy-04"></i> {{ $t("news") }}
+          <h5> <i class="now-ui-icons files_single-copy-04"></i> {{ $t("news") }} </h5>
+        </nav-link>
+        <nav-link to="/investor_info">
+          <h5> <i class="now-ui-icons education_paper"></i> {{ $t("investors") }} </h5>
         </nav-link>
         <nav-link to="/sustainability">
-          <i class="now-ui-icons users_single-02"></i> {{ $t("sustainability") }}
+          <h5> <i class="now-ui-icons users_single-02"></i> {{ $t("sustainability") }} </h5>
+        </nav-link>
+        <nav-link to="/career">
+          <h5> <i class="now-ui-icons ui-1_zoom-bold"></i> {{ $t("hiring") }} </h5>
+        </nav-link>
+        <nav-link to="/faq">
+          <h5> <i class="now-ui-icons travel_info"></i> {{ $t("questions") }} </h5>
         </nav-link>
       </drop-down>
       <li class="nav-item">
@@ -66,18 +83,26 @@
         icon="now-ui-icons business_globe"
         class="nav-item"
       >
-        <a class="dropdown-item" @click="changeLocale('jp')">
-          日本語
-        </a>
-        <a class="dropdown-item" @click="changeLocale('en')">
-          English
-        </a>
-        <a class="dropdown-item" @click="changeLocale('cn')">
-          简体中文
-        </a>
-        <a class="dropdown-item" @click="changeLocale('tw')">
-          繁體中文
-        </a>
+        <h5> 
+          <a class="dropdown-item" @click="changeLocale('jp')" style="cursor: pointer">
+            日本語
+          </a>
+        </h5>
+        <h5> 
+          <a class="dropdown-item" @click="changeLocale('en')" style="cursor: pointer">
+            English
+          </a> 
+        </h5>
+        <h5>
+          <a class="dropdown-item" @click="changeLocale('cn')" style="cursor: pointer">
+            简体中文
+          </a>
+        </h5>
+        <h5>
+          <a class="dropdown-item" @click="changeLocale('tw')" style="cursor: pointer">
+            繁體中文
+          </a>
+        </h5>
       </drop-down>
     </template>
   </navbar>

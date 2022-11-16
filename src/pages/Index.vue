@@ -8,9 +8,7 @@
       </parallax>
       <div class="container">
         <div class="content-center brand">
-          <img class="n-logo" src="img/now-logo.png" alt="" />
-          <h1 class="h1-seo">Minicloud</h1>
-          <h3>{{$t("slogan")}}</h3>
+          <h2>{{$t("slogan")}}</h2>
         </div>
       </div>
     </div>

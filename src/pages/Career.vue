@@ -3,26 +3,24 @@
     <div class="page-header page-header-small">
       <parallax
         class="page-header-image"
-        style="background-image: url('img/bg-invest.jpg')"
+        style="background-image: url('img/bg-career.jpg')"
       >
       </parallax>
       <div class="content-center">
         <div class="container">
-          <h1 class="title">{{ $t("investors") }}</h1>
+          <h1 class="title">{{ $t("hiring") }}</h1>
         </div>
       </div>
     </div>
-    <div class="section section-about-us">
+    <div class="section section-about-us" v-for="element in news" :key="element.id">
       <div class="container">
         <div class="row">
           <div class="col-md-8 ml-auto mr-auto text-center">
-            <h2 class="title">Who we are?</h2>
+            <h2 class="title">{{ element.news_title }}</h2>
             <h5 class="description">
-              According to the National Oceanic and Atmospheric Administration,
-              Ted, Scambos, NSIDClead scentist, puts the potentially record low
-              maximum sea ice extent tihs year down to low ice extent in the
-              Pacific and a late drop in ice extent in the Barents Sea.
+              {{ element.news_content }}
             </h5>
+            <img v-bind:src="element.image_url" class="img-raised">
           </div>
         </div>
         <div class="separator separator-primary"></div>
@@ -37,11 +35,25 @@
 <script>
 import { Button, FormGroupInput } from '@/components';
 export default {
-  name: 'investor_info',
+  name: 'career',
   bodyClass: 'landing-page',
   components: {
     [Button.name]: Button,
     [FormGroupInput.name]: FormGroupInput
+  },
+  data() {
+    return {
+      news: []
+    }
+  },
+  methods: {
+    async fetchNews() {
+      const res = await axios.get('/news');
+      this.news = res.data;
+    }
+  },
+  async created() {
+    await this.fetchNews();
   }
 };
 </script>

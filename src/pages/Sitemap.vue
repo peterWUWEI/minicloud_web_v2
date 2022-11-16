@@ -3,12 +3,12 @@
     <div class="page-header page-header-small">
       <parallax
         class="page-header-image"
-        style="background-image: url('img/bg-invest.jpg')"
+        style="background-image: url('img/bg-sitemap.jpg')"
       >
       </parallax>
       <div class="content-center">
         <div class="container">
-          <h1 class="title">{{ $t("investors") }}</h1>
+          <h1 class="title">{{ $t("sitemap") }}</h1>
         </div>
       </div>
     </div>
@@ -37,7 +37,7 @@
 <script>
 import { Button, FormGroupInput } from '@/components';
 export default {
-  name: 'investor_info',
+  name: 'sitemap',
   bodyClass: 'landing-page',
   components: {
     [Button.name]: Button,

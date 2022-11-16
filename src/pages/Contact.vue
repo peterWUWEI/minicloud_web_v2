@@ -8,7 +8,7 @@
       </parallax>
       <div class="content-center">
         <div class="container">
-          <h1 class="title">{{ $t("contact_header") }}</h1>
+          <h1 class="title">{{ $t("contact") }}</h1>
         </div>
       </div>
     </div>

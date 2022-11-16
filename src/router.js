@@ -7,6 +7,10 @@ import InvestorInfo from './pages/InvestorInfo.vue';
 import News from './pages/News.vue';
 import Sustainability from './pages/Substainability.vue';
 import Contact from './pages/Contact.vue';
+import Career from './pages/Career.vue';
+import Faq from './pages/Faq.vue';
+import Sitemap from './pages/Sitemap.vue';
+import SitePolicy from './pages/SitePolicy.vue'
 import MainNavbar from './layout/MainNavbar.vue';
 import MainFooter from './layout/MainFooter.vue';
 
@@ -73,6 +77,42 @@ export default new Router({
       path: '/contact',
       name: 'contact',
       components: { default: Contact, header: MainNavbar, footer: MainFooter },
+      props: {
+        header: { colorOnScroll: 400 },
+        footer: { backgroundColor: 'black' }
+      }
+    },
+    {
+      path: '/career',
+      name: 'career',
+      components: { default: Career, header: MainNavbar, footer: MainFooter },
+      props: {
+        header: { colorOnScroll: 400 },
+        footer: { backgroundColor: 'black' }
+      }
+    },
+    {
+      path: '/faq',
+      name: 'faq',
+      components: { default: Faq, header: MainNavbar, footer: MainFooter },
+      props: {
+        header: { colorOnScroll: 400 },
+        footer: { backgroundColor: 'black' }
+      }
+    },
+    {
+      path: '/sitemap',
+      name: 'sitemap',
+      components: { default: Sitemap, header: MainNavbar, footer: MainFooter },
+      props: {
+        header: { colorOnScroll: 400 },
+        footer: { backgroundColor: 'black' }
+      }
+    },
+    {
+      path: '/sitepolicy',
+      name: 'sitepolicy',
+      components: { default: SitePolicy, header: MainNavbar, footer: MainFooter },
       props: {
         header: { colorOnScroll: 400 },
         footer: { backgroundColor: 'black' }
