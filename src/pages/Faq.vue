@@ -12,13 +12,13 @@
         </div>
       </div>
     </div>
-    <div class="section section-about-us" v-for="element in news" :key="element.id">
+    <div class="section section-about-us" v-for="element in faqs" :key="element.id">
       <div class="container">
         <div class="row">
           <div class="col-md-8 ml-auto mr-auto text-center">
-            <h2 class="title">{{ element.news_title }}</h2>
+            <h2 class="title">{{ element.title }}</h2>
             <h5 class="description">
-              {{ element.news_content }}
+              {{ element.content }}
             </h5>
             <img v-bind:src="element.image_url" class="img-raised">
           </div>
@@ -43,17 +43,17 @@ export default {
   },
   data() {
     return {
-      news: []
+      faqs: []
     }
   },
   methods: {
     async fetchNews() {
-      const res = await axios.get('/news');
-      this.news = res.data;
+      // const res = await axios.get('/news');
+      // this.news = res.data;
     }
   },
   async created() {
-    await this.fetchNews();
+    // await this.fetchNews();
   }
 };
 </script>

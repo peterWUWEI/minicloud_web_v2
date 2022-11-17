@@ -12,15 +12,53 @@
         </div>
       </div>
     </div>
-    <div class="section section-about-us" v-for="service in services" :key="service.id">
+    <div class="section section-about-us">
       <div class="container">
         <div class="row">
           <div class="col-md-8 ml-auto mr-auto text-center">
-            <h2 class="title"> {{ service.service_title }}</h2>
+            <h2 class="title"> {{ $t("app_download") }}</h2>
             <h5 class="description">
-              {{ service.service_content }}
+              {{ services[0].service_content }}
             </h5>
-            <img v-bind:src="service.image_url" class="img-raised">
+            <img v-bind:src="services[0].image_url" class="img-raised">
+          </div>
+        </div>
+        <div class="separator separator-primary"></div>
+        <div class="section-story-overview">
+          <div class="row">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section section-about-us">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 ml-auto mr-auto text-center">
+            <h2 class="title"> {{ $t("our_services") }}</h2>
+            <h5 class="description">
+              {{ services[1].service_content }}
+            </h5>
+            <img v-bind:src="services[1].image_url" class="img-raised">
+          </div>
+        </div>
+        <div class="separator separator-primary"></div>
+        <div class="section-story-overview">
+          <div class="row">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section section-about-us">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 ml-auto mr-auto text-center">
+            <h2 class="title"> {{ $t("coopration") }}</h2>
+            <h5 class="description">
+              {{ services[2].service_content }}
+            </h5>
+            <img v-bind:src="services[2].image_url" class="img-raised">
           </div>
         </div>
         <div class="separator separator-primary"></div>

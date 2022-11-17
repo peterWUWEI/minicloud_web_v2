@@ -12,7 +12,7 @@
         </div>
       </div>
     </div>
-    <div class="section section-about-us">
+    <!-- <div class="section section-about-us">
       <div class="container">
         <div class="row">
           <div class="col-md-8 ml-auto mr-auto text-center">
@@ -31,7 +31,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 <script>

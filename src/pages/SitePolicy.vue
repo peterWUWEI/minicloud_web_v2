@@ -16,12 +16,9 @@
       <div class="container">
         <div class="row">
           <div class="col-md-8 ml-auto mr-auto text-center">
-            <h2 class="title">Who we are?</h2>
+            <h2 class="title">{{ sitepolicy.title }}</h2>
             <h5 class="description">
-              According to the National Oceanic and Atmospheric Administration,
-              Ted, Scambos, NSIDClead scentist, puts the potentially record low
-              maximum sea ice extent tihs year down to low ice extent in the
-              Pacific and a late drop in ice extent in the Barents Sea.
+              {{ sitepolicy.content }}
             </h5>
           </div>
         </div>
@@ -42,6 +39,20 @@ export default {
   components: {
     [Button.name]: Button,
     [FormGroupInput.name]: FormGroupInput
+  },
+  data() {
+    return {
+      sitepolicy: {}
+    }
+  },
+  methods: {
+    async fetchSitepolicy() {
+      const res = await axios.get('/sitepolicy');
+      this.sitepolicy = res.data;
+    }
+  },
+  async created() {
+    await this.fetchSitepolicy();
   }
 };
 </script>
