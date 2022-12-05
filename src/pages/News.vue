@@ -33,28 +33,30 @@
   </div>
 </template>
 <script>
-import { Button, FormGroupInput } from '@/components';
-export default {
-  name: 'news',
-  bodyClass: 'landing-page',
-  components: {
-    [Button.name]: Button,
-    [FormGroupInput.name]: FormGroupInput
-  },
-  data() {
-    return {
-      news: []
+  import { Button, FormGroupInput } from '@/components';
+  import axios from 'axios';
+
+  export default {
+    name: 'news',
+    bodyClass: 'landing-page',
+    components: {
+      [Button.name]: Button,
+      [FormGroupInput.name]: FormGroupInput
+    },
+    data() {
+      return {
+        news: []
+      }
+    },
+    methods: {
+      async fetchNews() {
+        const res = await axios.get('/news');
+        this.news = res.data;
+      }
+    },
+    async created() {
+      await this.fetchNews();
     }
-  },
-  methods: {
-    async fetchNews() {
-      const res = await axios.get('/news');
-      this.news = res.data;
-    }
-  },
-  async created() {
-    await this.fetchNews();
-  }
-};
+  };
 </script>
 <style></style>

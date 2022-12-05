@@ -13,14 +13,14 @@
       </div>
     </div>
 
-    <div class="section section-about-us">
+    <div class="section section-about-us" v-for="element in about" :key="element.title">
       <div class="container">
         <div class="row">
           <div class="col-md-8 ml-auto mr-auto text-center">
-            <h2 class="title">{{ $t("company_info") }}</h2>
-            <img v-bind:src="about[0].image_url" class="img-raised">
+            <h2 class="title">{{ element[$i18n.locale].title }}</h2>
+            <img v-bind:src="element[$i18n.locale].image_url" class="img-raised">
             <h5 class="description">
-              {{ about[0].content }}
+              {{ element[$i18n.locale].content }}
             </h5>
           </div>
         </div>
@@ -37,39 +37,20 @@
         <h2 class="title">{{ $t("our_team") }}</h2>
         <div class="team">
           <div class="row">
-            <div class="col-md-4">
-              <div class="team-player" v-for="team_member in team_members" :key="team_member.id">
+            <div class="col-md-4" v-for="team_member in team_members" :key="team_member.id">
+              <div class="team-player">
                 <img
                   :src="team_member.image_url"
                   alt="Thumbnail Image"
                   class="rounded-circle img-fluid img-raised"
                 />
-                <h4 class="title">{{ team_member.name }}</h4>
-                <p class="category text-primary">{{ team_member.title }}</p>
+                <h4 class="title">{{ team_member[$i18n.locale].name }}</h4>
+                <p class="category text-primary">{{ team_member[$i18n.locale].title }}</p>
                 <p class="description">
-                  {{ team_member.desc }}
+                  {{ team_member[$i18n.locale].desc }}
                 </p>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section section-about-us">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8 ml-auto mr-auto text-center">
-            <h2 class="title">{{ $t("mindset") }}</h2>
-            <img v-bind:src="about[0].image_url" class="img-raised">
-            <h5 class="description">
-              {{ about[1].content }}
-            </h5>
-          </div>
-        </div>
-        <div class="separator separator-primary"></div>
-        <div class="section-story-overview">
-          <div class="row">
           </div>
         </div>
       </div>
@@ -92,12 +73,13 @@
     },
     methods: {
       async fetchAbout() {
-        const res = await axios.get('/about');
+        const res = await axios.post('/about/content');
         this.about = res.data;
       },
       async fetchTeamMembers() {
-        const res = await axios.get('/teammembers');
+        const res = await axios.post('/teammembers/content');
         this.team_members = res.data
+        console.log(this.team_members);
       }
     },
     async created() {

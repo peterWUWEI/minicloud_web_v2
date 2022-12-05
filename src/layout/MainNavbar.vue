@@ -11,17 +11,7 @@
         <img class="n-logo" width="80" src="img/now-logo.png" alt="" />
         Minicloud
       </router-link>
-      <el-popover
-        ref="popover1"
-        popper-class="popover"
-        placement="bottom"
-        width="200"
-        trigger="hover"
-      >
-        <div class="popover-body">
-          Your E-Commerce Partner
-        </div>
-      </el-popover>
+
     </template>
     <template slot="navbar-menu">
       <li class="nav-item">
@@ -35,23 +25,6 @@
           <h5><i class="now-ui-icons business_badge"></i> {{ $t("about") }}</h5>
         </router-link>
       </li>
-      
-      <!-- <drop-down
-        tag="li"
-        :title="info_title()"
-        icon="now-ui-icons design_app"
-        class="nav-item"
-      >
-        <nav-link to="/about">
-          <h5> <i class="now-ui-icons business_badge"></i> {{ $t("about") }} </h5>
-        </nav-link>
-        <nav-link to="#">
-          <h5> <i class="now-ui-icons ui-1_zoom-bold"></i> {{ $t("hiring") }} </h5>
-        </nav-link>
-        <nav-link to="/investor_info">
-          <h5> <i class="now-ui-icons education_paper"></i> {{ $t("investors") }} </h5>
-        </nav-link>
-      </drop-down> -->
 
       <drop-down
         tag="li"
