@@ -79,7 +79,6 @@
       async fetchTeamMembers() {
         const res = await axios.post('/teammembers/content');
         this.team_members = res.data
-        console.log(this.team_members);
       }
     },
     async created() {
