@@ -12,7 +12,7 @@
         </div>
       </div>
     </div>
-    <div class="section section-about-us" v-for="element in news" :key="element.id">
+    <div class="section section-about-us" v-for="element in orderedNews" :key="element.id">
       <div class="container">
         <div class="row">
           <div class="col-md-8 ml-auto mr-auto text-center">
@@ -33,15 +33,15 @@
   </div>
 </template>
 <script>
-  import { Button, FormGroupInput } from '@/components';
   import axios from 'axios';
 
   export default {
     name: 'news',
     bodyClass: 'landing-page',
-    components: {
-      [Button.name]: Button,
-      [FormGroupInput.name]: FormGroupInput
+    computed: {
+      orderedNews() {
+        return _.orderBy(this.news, 'id')
+      }
     },
     data() {
       return {
@@ -50,7 +50,7 @@
     },
     methods: {
       async fetchNews() {
-        const res = await axios.get('/news');
+        const res = await axios.post('/news/content');
         this.news = res.data;
       }
     },

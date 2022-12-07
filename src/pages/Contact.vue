@@ -12,7 +12,7 @@
         </div>
       </div>
     </div>
-    <div class="section section-about-us" v-for="contact in contacts" :key="contact.id">
+    <div class="section section-about-us" v-for="contact in orderedContacts" :key="contact.id">
       <div class="container">
         <div class="row">
           <div class="col-md-8 ml-auto mr-auto text-center">
@@ -34,6 +34,7 @@
 <script>
   import { Button, FormGroupInput } from '@/components';
   import axios from 'axios';
+  const _ = require('lodash');
 
   export default {
     name: 'contact',
@@ -41,6 +42,11 @@
     components: {
       [Button.name]: Button,
       [FormGroupInput.name]: FormGroupInput
+    },
+    computed: {
+      orderedContacts() {
+        return _.orderBy(this.contacts, 'id')
+      }
     },
     data() {
       return {

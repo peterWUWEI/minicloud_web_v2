@@ -12,17 +12,15 @@
         </div>
       </div>
     </div>
-    <!-- <div class="section section-about-us">
+    <div class="section section-about-us" v-for="ele in orderedInvestorInfo" :key="ele.title">
       <div class="container">
         <div class="row">
           <div class="col-md-8 ml-auto mr-auto text-center">
-            <h2 class="title">Who we are?</h2>
+            <h2 class="title"> {{ ele[$i18n.locale].title }}</h2>
             <h5 class="description">
-              According to the National Oceanic and Atmospheric Administration,
-              Ted, Scambos, NSIDClead scentist, puts the potentially record low
-              maximum sea ice extent tihs year down to low ice extent in the
-              Pacific and a late drop in ice extent in the Barents Sea.
+              {{ ele[$i18n.locale].content }}
             </h5>
+            <img v-bind:src="service.image_url" class="img-raised">
           </div>
         </div>
         <div class="separator separator-primary"></div>
@@ -31,18 +29,35 @@
           </div>
         </div>
       </div>
-    </div> -->
+    </div>
   </div>
 </template>
 <script>
-import { Button, FormGroupInput } from '@/components';
-export default {
-  name: 'investor_info',
-  bodyClass: 'landing-page',
-  components: {
-    [Button.name]: Button,
-    [FormGroupInput.name]: FormGroupInput
-  }
-};
+  import axios from 'axios';
+  const _ = require('lodash');
+
+  export default {
+    name: 'investor_info',
+    bodyClass: 'landing-page',
+    computed: {
+      orderedInvestorInfo() {
+        return _.orderBy(this.investor_info, 'id')
+      }
+    },
+    data() {
+      return {
+        investor_info: []
+      }
+    },
+    methods: {
+      async fetchInvestorInfo() {
+        const res = await axios.post('/investor_info/content');
+        this.investor_info = res.data;
+      }
+    },
+    async created() {
+      await this.fetchInvestorInfo();
+    }
+  };  
 </script>
 <style></style>

@@ -13,7 +13,7 @@
       </div>
     </div>
 
-    <div class="section section-about-us" v-for="element in about" :key="element.title">
+    <div class="section section-about-us" v-for="element in orderedAbout" :key="element.title">
       <div class="container">
         <div class="row">
           <div class="col-md-8 ml-auto mr-auto text-center">
@@ -37,7 +37,7 @@
         <h2 class="title">{{ $t("our_team") }}</h2>
         <div class="team">
           <div class="row">
-            <div class="col-md-4" v-for="team_member in team_members" :key="team_member.id">
+            <div class="col-md-4" v-for="team_member in orderedTeamMembers" :key="team_member.id">
               <div class="team-player">
                 <img
                   :src="team_member.image_url"
@@ -61,10 +61,19 @@
 
 <script>
   import axios from 'axios';
+  const _ = require('lodash');
 
   export default {
     name: 'about',
     bodyClass: 'landing-page',
+    computed: {
+      orderedAbout() {
+        return _.orderBy(this.about, 'id')
+      },
+      orderedTeamMembers() {
+        return _.orderBy(this.team_members, 'id')
+      }
+    },
     data() {
       return {
         about: [],
