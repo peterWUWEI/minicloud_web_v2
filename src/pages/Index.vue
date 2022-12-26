@@ -8,7 +8,7 @@
       </parallax>
       <div class="container">
         <div class="content-center brand">
-          <h2>{{$t("slogan")}}</h2>
+          <h2 class="black">{{$t("slogan")}}</h2>
         </div>
       </div>
     </div>
@@ -39,4 +39,9 @@ export default {
   }
 };
 </script>
-<style></style>
+
+<style scoped>
+  .black {
+    color: black;
+  }
+</style>

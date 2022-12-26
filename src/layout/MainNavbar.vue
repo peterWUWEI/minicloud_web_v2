@@ -9,20 +9,20 @@
     <template>
       <router-link v-popover:popover1 class="navbar-brand" to="/">
         <img class="n-logo" width="80" src="img/now-logo.png" alt="" />
-        Minicloud
+        <p class="black">Minicloud</p>
       </router-link>
 
     </template>
     <template slot="navbar-menu">
       <li class="nav-item">
         <router-link class="nav-link" to="/services">
-          <h5><i class="now-ui-icons ui-2_settings-90"></i> {{ $t("services") }}</h5>
+          <h5 class="black"><i class="now-ui-icons ui-2_settings-90"></i> {{ $t("services") }}</h5>
         </router-link>
       </li>
 
       <li class="nav-item">
         <router-link class="nav-link" to="/about">
-          <h5><i class="now-ui-icons business_badge"></i> {{ $t("about") }}</h5>
+          <h5 class="black"><i class="now-ui-icons business_badge"></i> {{ $t("about") }}</h5>
         </router-link>
       </li>
 
@@ -127,4 +127,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+  .black {
+    color: black;
+  }
+</style>

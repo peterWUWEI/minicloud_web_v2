@@ -15,12 +15,13 @@
     <slot name="title">
       <h5> 
         <a
+          style="color: black"
           class="dropdown-toggle nav-link"
           :class="{ 'no-caret': hideArrow }"
           data-toggle="dropdown"
         >
-          <i :class="icon"></i>
-          <span class="no-icon">{{ title }}</span>
+          <i class="black" :class="icon"></i>
+          <span class="no-icon black">{{ title }}</span>
         </a>
       </h5>
     </slot>
@@ -81,5 +82,9 @@ export default {
 
 .dropdown .dropdown-toggle {
   cursor: pointer;
+}
+
+.black {
+  color: black;
 }
 </style>
