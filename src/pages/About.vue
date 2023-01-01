@@ -19,7 +19,7 @@
           <div class="col-md-8 ml-auto mr-auto text-center">
             <h2 class="title">{{ element[$i18n.locale].title }}</h2>
             <img v-bind:src="element[$i18n.locale].image_url" class="img-raised">
-            <h5 class="description">
+            <h5 class="description display-text">
               {{ element[$i18n.locale].content }}
             </h5>
           </div>
@@ -45,7 +45,7 @@
                   class="rounded-circle img-fluid img-raised"
                 />
                 <h4 class="title">{{ team_member[$i18n.locale].name }}</h4>
-                <p class="category text-primary">{{ team_member[$i18n.locale].title }}</p>
+                <p class="category text-black">{{ team_member[$i18n.locale].title }}</p>
                 <p class="description">
                   {{ team_member[$i18n.locale].desc }}
                 </p>

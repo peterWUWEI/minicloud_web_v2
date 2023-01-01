@@ -17,7 +17,7 @@
         <div class="row">
           <div class="col-md-8 ml-auto mr-auto text-center">
             <h2 class="title"> {{ service[$i18n.locale].title }}</h2>
-            <h5 class="description">
+            <h5 class="description display-text">
               {{ service[$i18n.locale].content }}
             </h5>
             <img v-bind:src="service.image_url" class="img-raised">
@@ -65,4 +65,10 @@
     }
   };
 </script>
-<style></style>
+
+<style>
+  .display-text {
+    white-space: pre-line;
+    text-align: left;
+  }
+</style>

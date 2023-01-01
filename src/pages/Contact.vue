@@ -17,7 +17,7 @@
         <div class="row">
           <div class="col-md-8 ml-auto mr-auto text-center">
             <h2 class="title">{{ contact.title }}</h2>
-            <h5 class="description">
+            <h5 class="description display-text">
             {{ contact.content }}
             </h5>
           </div>

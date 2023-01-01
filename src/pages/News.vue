@@ -17,7 +17,7 @@
         <div class="row">
           <div class="col-md-8 ml-auto mr-auto text-center">
             <h2 class="title">{{ element.news_title }}</h2>
-            <h5 class="description">
+            <h5 class="description display-text">
               {{ element.news_content }}
             </h5>
             <img v-bind:src="element.image_url" class="img-raised">
