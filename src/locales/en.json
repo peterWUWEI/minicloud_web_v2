@@ -13,5 +13,12 @@
     "sitepolicy": "Site Policy",
     "our_team": "Our Team",
     "slogan": "Potentially growing business",
-    "language": "language"
+    "language": "language",
+    "company_info": "Company Info",
+    "company_name": "Company Name",
+    "company_address": "Company Registered Address",
+    "date_of_estblish": "Company Established Date",
+    "company_fund": "Registered Fund",
+    "company_services": "Main Business Scope",
+    "milestones": "Milestones"
 }

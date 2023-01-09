@@ -13,5 +13,12 @@
   "sitepolicy": "サイトポリシー",
   "our_team": "チーム",
   "slogan": "ビジネスの可能性を広げる",
-  "language": "语言"
+  "language": "语言",
+  "company_info": "会社概要",
+  "company_name": "商号",
+  "company_address": "住所",
+  "date_of_estblish": "設立日",
+  "company_fund": "資本金",
+  "company_services": "主な事業内容",
+  "milestones": "沿革"
 }

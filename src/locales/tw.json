@@ -13,5 +13,12 @@
     "sitepolicy": "網站政策",
     "our_team": "團隊",
     "slogan": "拓寬商業的可能性",
-    "language": "语言"
+    "language": "语言",
+    "company_info": "公司概要",
+    "company_name": "企業名",
+    "company_address": "註冊地",
+    "date_of_estblish": "成立日",
+    "company_fund": "資本金",
+    "company_services": "主業務",
+    "milestones": "里程碑"
 }
